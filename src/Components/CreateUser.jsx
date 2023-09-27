@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import UserForm from './UserForm';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './Home';
 
 function CreateUser() {
     const [users,addUsers] = useState(() => {
@@ -41,6 +43,15 @@ function CreateUser() {
         }
         </ul>
         <UserForm add={addUser} length={users.length} />
+
+        <Link to="/" >go Back to enter chatroom</Link>
+          <Routes>
+          
+            <Route path="/createUser" element={<Home />} />
+            
+             
+          </Routes>
+         
     </div>
   )
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function Message(props) {
     const [message,setMessage] = useState({
         id:0,
+        username:"",
         content:""
     });
 
@@ -20,7 +21,12 @@ function Message(props) {
   return (
     <div>
         
-            <input type='text' value={message.content} onChange={e => setMessage({content:e.target.value,id:props.length+1})}  />
+            <input type='text' value={message.content} 
+            onChange={e => setMessage({
+                content:e.target.value,
+                id:props.length+1,
+                username:props.username
+                })}  />
             <button type='submit' onClick={handleSubmit} >send</button>
         
     </div>
