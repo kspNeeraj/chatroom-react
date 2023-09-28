@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import style from '../styles/message.module.css'
 
 function Message(props) {
     const [message,setMessage] = useState({
@@ -19,7 +20,7 @@ function Message(props) {
     }
 
   return (
-    <div>
+    <div className={style.message}>
         
             <input type='text' value={message.content} 
             onChange={e => setMessage({

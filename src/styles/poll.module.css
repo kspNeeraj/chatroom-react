@@ -1,0 +1,50 @@
+.pollcontainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.pollcontainer h3{
+    margin: 2px;
+}
+.pollcontainer h4{
+    margin: 2px;
+}
+.pollbox{
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #0084FF;
+    border-radius: 10px;
+}
+
+.data{
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+}
+.data input{
+    position: relative;
+    left: 10px;
+    
+}
+.data label{
+    position: relative;
+    left: 20px;
+}
+.data p{
+   position: absolute;
+    margin: 0;
+    right: 0;
+}
+.in{
+    width: 90%;
+}
+
+
+.poll-box:hover{
+    border-color: #0084FF;
+    color: #0084FF;
+}

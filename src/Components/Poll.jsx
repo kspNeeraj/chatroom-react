@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import style from '../styles/poll.module.css'
 
 function Poll(props) {
     const [pollStatsA,setA]=useState(()=>{
@@ -118,9 +118,8 @@ function Poll(props) {
 
   return (
     <div>
-        <h1>Poll</h1>
-        {isPolled&& <h2>Your selection is saved</h2>}
-        <div>
+       
+        {/* <div>
         <input type='range' value={Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100) } name='A' min={0} max={100}  />
         <label> {Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100)} A</label>
         <input type="radio" onClick={handlePoll} name="poll" value="A" disabled={isPolled}/>
@@ -133,7 +132,48 @@ function Poll(props) {
         <input type='range' value={Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
         <label> {Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} D</label>
         <input type="radio" onClick={handlePoll} name="poll" value="D" disabled={isPolled}/>
+        </div> */}
+
+        <div class={style.pollcontainer}>
+        <h3>Poll</h3>
+        {isPolled&& <h4>Your selection is saved</h4>}
+        <div class={style.pollbox}>
+            <div class={style.data}>
+            <input type="radio" onClick={handlePoll} name="poll" value="A" disabled={isPolled}/>
+                <label for="">A</label>
+                <p> {Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100)} </p>
+            </div>
+            <input  class={style.in} type='range' value={Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100) } name='A' min={0} max={100}  />
         </div>
+        <div class={style.pollbox}>
+            <div class={style.data}>
+                <input type="radio" onClick={handlePoll}  name="poll" value="B" disabled={isPolled}  />
+                <label for="">B</label>
+                <p> {Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} B</p>
+            </div>
+            <input class={style.in} type='range' value={Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
+        </div>
+        <div class={style.pollbox}>
+            <div class={style.data}>
+            <input type="radio" onClick={handlePoll}  name="poll" value="C" disabled={isPolled}  />
+                <label for="">C</label>
+                <p> {Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} C</p>
+            </div>
+            <input class={style.in} type='range' value={Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100}/>
+        </div>
+        <div class={style.pollbox}>
+            <div class={style.data}>
+            <input type="radio" onClick={handlePoll}  name="poll" value="D" disabled={isPolled}  />
+                <label for="">D</label>
+                <p> {Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} D</p>
+            </div>
+            <input class={style.in} type='range' value={Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
+        </div>
+
+    </div>
+
+
+        
     </div>
   )
 }

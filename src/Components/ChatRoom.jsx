@@ -3,7 +3,7 @@ import Message from './Message'
 import { Link,Routes,Route, BrowserRouter } from 'react-router-dom';
 import Home from './Home';
 import Poll from './Poll';
-
+import style from '../styles/chatroom.module.css'
 
 function ChatRoom(props) {
     const [messages,addMessages]=useState( () => {
@@ -44,6 +44,14 @@ function ChatRoom(props) {
     //         setMessage(messages)
     //     }
     // },[])
+    useEffect(()=>{
+        console.log("feed called")
+        const el = document.getElementById('chat-feed');
+        // id of the chat container ---------- ^^^
+            if (el) {
+            el.scrollTop = el.scrollHeight;
+        }
+    })
     const addMessage= (message) =>{
         console.log(message)
         const items = JSON.parse(localStorage.getItem("myItems"));
@@ -56,24 +64,31 @@ function ChatRoom(props) {
         
     }
     
+    
     if (isloggedIn) {
         return (
-            <div>
-            <Poll username={props.username}/>
-            
-             <ul>
-                { messages.map((message)=>(
-                        message.username===props.username?
-                        <li className='other-message' key={message.id} >{message.content} </li>
-                        :<li className='self-message' key={message.id} >{message.content} </li>
-                       
-                    ))
-                }
-            </ul>
-           
-                <Message  onadd={addMessage}  length={messages.length}  username={props.username}/>
-                <h1>chatroom</h1>
+            <div className={style.chatroomContainer}>
+            <div className={style.pollContainer}>
+                <Poll username={props.username}/>
+            </div>
+            <div className={style.chatContainer}>
+                <div className={style.messageContainer}  id='chat-feed' >
+                    { messages.map((message)=>(
+                            message.username===props.username?
+                            <div className={style.selfmessage} key={message.id} ><div className={style.meesageBubble}><p>{message.content}  <sub>{message.username}</sub></p></div> </div>
+                            :<div className={style.othermessage} key={message.id}><div className={style.meesageBubble}> <p><sub>{message.username}</sub>  {message.content} </p> </div></div>
+                        
+                        ))
+                    }
+                </div>
+            <div className={style.createmessage}>
+            <Message  onadd={addMessage}  length={messages.length}  username={props.username}/>
+            </div>
+              
+                
                
+            </div>
+             
             
             </div>
           )

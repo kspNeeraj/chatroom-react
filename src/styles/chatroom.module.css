@@ -1,0 +1,75 @@
+.chatroomContainer{
+    display: grid;
+    height: 65vh;
+    grid-template-columns: 2fr 4fr;
+    position: absolute;
+    width: 100%;
+}
+.pollContainer{
+
+}
+
+.chatContainer{
+    position: relative;
+    height: 65vh;
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+}
+
+.messageContainer{
+    position: relative;
+    overflow-y: scroll;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 50px;
+    
+}
+.selfmessage{
+    display: flex;
+    flex-direction:row-reverse;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.othermessage{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.createmessage{
+
+}
+.meesageBubble{
+    height: 40px;
+    color: white;
+    background-color:#008ECF;
+    max-width: calc(100% -67px);
+    overflow-wrap: break-word;
+    border-start-end-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meesageBubble p{
+    padding: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+ }
+/* Track */
+ ::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #bec4c4;
+}
+
+/* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

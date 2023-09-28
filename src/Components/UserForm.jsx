@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import style from '../styles/createUsers.module.css'
 
 function UserForm(props) {
     const [user,setUser] = useState({
@@ -15,8 +16,8 @@ function UserForm(props) {
     }
   return (
     <div>
-          <input type='text' value={user.name} onChange={e => setUser({name:e.target.value,id:props.length+1})}/>
-        <button onClick={handleUser} >create User</button>
+          <input className={style.input} type='text' value={user.name} onChange={e => setUser({name:e.target.value,id:props.length+1})}/>
+        <button className={style.button} onClick={handleUser} >create User</button>
     </div>
   )
 }

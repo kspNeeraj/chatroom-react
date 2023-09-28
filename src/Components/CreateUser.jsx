@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import UserForm from './UserForm';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from './Home';
+import style from '../styles/createUsers.module.css'
 
 function CreateUser() {
     const [users,addUsers] = useState(() => {
@@ -33,11 +34,12 @@ function CreateUser() {
 
 
   return (
-    <div>
-        <ul>
+    <div className={style.listwrapper}>
+        <ul className={style.list}>
          {
             users.map(user=>(
-                <li key={user.id}>{user.name}  </li>
+                <li className={style.listitem} key={user.id}>{user.name}  </li>
+                
             ))
             
         }
@@ -47,7 +49,7 @@ function CreateUser() {
         <Link to="/" >go Back to enter chatroom</Link>
           <Routes>
           
-            <Route path="/createUser" element={<Home />} />
+            <Route path="/createUser" element={<Home/>} />
             
              
           </Routes>

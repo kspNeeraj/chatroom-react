@@ -1,0 +1,21 @@
+.message{
+
+}
+
+.message input{
+    width: 75%;
+    height: 30px;
+    margin-top: 5px;
+    border: 2px solid #008ECF;
+    border-radius: 10px;
+}
+.message button{
+   padding: 5px;
+   height: 30px;
+   font-size: 1rem;
+   width: 10%;
+   background-color: #008ECF;
+   color: #ffffff;
+   border: 0;
+   border-radius: 5px;
+}

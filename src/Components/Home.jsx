@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ChatRoom from './ChatRoom'
 import CreateUser from './CreateUser'
 import {  Routes, Route ,Link, useParams } from "react-router-dom";
+import style from "../styles/home.module.css"
 
 function Home() {
     const[user,setUserName] = useState({
@@ -10,16 +11,25 @@ function Home() {
     
 
   return (
-    <div>
-        <h1>hello</h1>
+    <div >
+    
+        <div className={style.container}>
+            <div className={style.createuser}>
+                
+                <h2>create user to enter chatroom</h2>
+                <button className={style.button}><Link className={style.text} to="/createUser">createUser</Link></button>
+                
+            </div>
+            <div className={style.login}>
+                <h2>Already a user  enter userId to enter chatroom</h2>
+                <input type='text' className={style.input} value={user.name} onChange={e=>setUserName({name:e.target.value})}  />
+                
+                <button className={style.button}><Link className={style.text} to="/chatroom">enter Chatroom</Link></button>
+            </div>
             
-        
-            <h2>create user to enter chatroom</h2>
-            <Link to="/createUser">createUser</Link>
-            <h1>Or</h1>
-            <h2>Already a user  enter userId to enter chatroom</h2>
-            <input type='text'value={user.name} onChange={e=>setUserName({name:e.target.value})}  />
-            <Link to="/chatroom" >enter Chatroom</Link>
+            
+        </div>
+            
           <Routes>
           
             <Route path="/createUser" element={<CreateUser />} />
@@ -27,15 +37,13 @@ function Home() {
             <Route path="/chatroom/:id" element={<Child />} />
 
           </Routes>
-
-      
-        
-
          {/* {userLogged ? (
               <Route path={"/dashboard"} element={<ChatRoom />} />
             ) : (
               <Route path={"/home"} element={<ChatRoom />} />
             )} */}
+
+        
     </div>
   )
 }
