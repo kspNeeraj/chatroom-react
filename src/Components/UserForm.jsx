@@ -8,7 +8,7 @@ function UserForm(props) {
     })
 
     const handleUser= ()=>{
-        console.log(user)
+        // console.log(user)
         props.add(user)
         setUser({
             name:""

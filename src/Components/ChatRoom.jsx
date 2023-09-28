@@ -15,7 +15,7 @@ function ChatRoom(props) {
 
     useEffect(() => {
         
-        console.log(props.username)
+        // console.log(props.username)
         
         const items= JSON.parse(localStorage.getItem('myUsers'));
         const index=items.find(item => item.name === props.username)
@@ -24,8 +24,8 @@ function ChatRoom(props) {
         }else{
             setState(false)
         }
-        console.log(items)
-        console.log("first called")
+        // console.log(items)
+        // console.log("first called")
         localStorage.setItem('myItems', JSON.stringify(messages));  
 
       }, []);
@@ -45,7 +45,7 @@ function ChatRoom(props) {
     //     }
     // },[])
     useEffect(()=>{
-        console.log("feed called")
+        // console.log("feed called")
         const el = document.getElementById('chat-feed');
         // id of the chat container ---------- ^^^
             if (el) {
@@ -53,10 +53,10 @@ function ChatRoom(props) {
         }
     })
     const addMessage= (message) =>{
-        console.log(message)
+        // console.log(message)
         const items = JSON.parse(localStorage.getItem("myItems"));
         const newItems = JSON.stringify([...items,message])
-        console.log(newItems);
+        // console.log(newItems);
         localStorage.setItem("myItems",newItems);
         addMessages((prevValue)=>{
             return [...prevValue,message]
@@ -95,7 +95,7 @@ function ChatRoom(props) {
     } else {
         return(
             <div>
-            <p>Please enter username to enter chatroom </p>
+            <p>Please enter a valid username to enter chatroom </p>
                        
             <Link to="/" >go Back</Link>
           <Routes>

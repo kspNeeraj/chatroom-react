@@ -34,7 +34,7 @@ function Poll(props) {
     const [isPolled,setisPolled]=useState(false)
 
     useEffect(()=>{
-        console.log("calledddd")
+        // console.log("calledddd")
         localStorage.setItem('myPollA' ,JSON.stringify(pollStatsA));
         localStorage.setItem('myPollB' ,JSON.stringify(pollStatsB));
         localStorage.setItem('myPollC' ,JSON.stringify(pollStatsC));
@@ -42,7 +42,7 @@ function Poll(props) {
         localStorage.setItem('userP' ,JSON.stringify(usersPolled));
         localStorage.setItem('polldata' ,JSON.stringify(polldata));
         const items = JSON.parse(localStorage.getItem('polldata'));
-        console.log(items)
+        // console.log(items)
         if (items!==null) {
             const index=items.find(item => item.user === props.username)
              if (index) {
@@ -50,8 +50,8 @@ function Poll(props) {
             }
         }
         
-        console.log(props.username)
-        console.log(usersPolled)
+        // console.log(props.username)
+        // console.log(usersPolled)
     //      localStorage.clear()
    //      localStorage.setItem('myPollA',(1))
         
@@ -61,7 +61,7 @@ function Poll(props) {
 
     
     useEffect(()=>{
-        console.log("called")
+        // console.log("called")
         const items = JSON.parse(localStorage.getItem('polldata'));
         const newItems = JSON.stringify([...items,userSelection])
         // console.log(newItems);
@@ -108,32 +108,16 @@ function Poll(props) {
                 break;
         }
         //setA(10)
-        console.log(pollStatsA)
-        console.log(pollStatsB)
-        console.log(pollStatsC)
-        console.log(pollStatsD)
+        // console.log(pollStatsA)
+        // console.log(pollStatsB)
+        // console.log(pollStatsC)
+        // console.log(pollStatsD)
         
         
     }
 
   return (
-    <div>
-       
-        {/* <div>
-        <input type='range' value={Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100) } name='A' min={0} max={100}  />
-        <label> {Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100)} A</label>
-        <input type="radio" onClick={handlePoll} name="poll" value="A" disabled={isPolled}/>
-        <input type='range' value={Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
-        <label> {Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} B</label>
-        <input type="radio" onClick={handlePoll}  name="poll" value="B" disabled={isPolled}  />
-        <input type='range' value={Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100}/>
-        <label> {Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} C</label>
-        <input type="radio" onClick={handlePoll} name="poll" value="C" disabled={isPolled}/>
-        <input type='range' value={Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
-        <label> {Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} D</label>
-        <input type="radio" onClick={handlePoll} name="poll" value="D" disabled={isPolled}/>
-        </div> */}
-
+    
         <div class={style.pollcontainer}>
         <h3>Poll</h3>
         {isPolled&& <h4>Your selection is saved</h4>}
@@ -174,7 +158,7 @@ function Poll(props) {
 
 
         
-    </div>
+    
   )
 }
 

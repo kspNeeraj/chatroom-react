@@ -9,6 +9,9 @@ function Home() {
         name:""
     })
     
+    const handleChange=()=>{
+        
+    }
 
   return (
     <div >
@@ -24,7 +27,7 @@ function Home() {
                 <h2>Already a user  enter userId to enter chatroom</h2>
                 <input type='text' className={style.input} value={user.name} onChange={e=>setUserName({name:e.target.value})}  />
                 
-                <button className={style.button}><Link className={style.text} to="/chatroom">enter Chatroom</Link></button>
+                <button  className={style.button}><Link onClick={handleChange} className={style.text} to="/chatroom">enter Chatroom</Link></button>
             </div>
             
             

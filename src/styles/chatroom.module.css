@@ -4,6 +4,7 @@
     grid-template-columns: 2fr 4fr;
     position: absolute;
     width: 100%;
+    margin-top: 20px;
 }
 .pollContainer{
 
@@ -20,6 +21,9 @@
     position: relative;
     overflow-y: scroll;
     background-color: #FFFFFF;
+    /* background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: auto; */
     border: 0;
     border-radius: 50px;
     

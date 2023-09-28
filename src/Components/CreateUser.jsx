@@ -11,19 +11,28 @@ function CreateUser() {
     })
 
     useEffect(()=>{
-        console.log("called user")
+        // console.log("called user")
 
         localStorage.setItem('myUsers',JSON.stringify(users));
         const items= JSON.parse(localStorage.getItem('myUsers'));
-        console.log(items)
+        // console.log(items)
     },[])
 
+    useEffect(()=>{
+        // console.log("feed called")
+        const el = document.getElementById('user-feed');
+        // id of the chat container ---------- ^^^
+            if (el) {
+            el.scrollTop = el.scrollHeight;
+        }
+    })
+
     const addUser = (user)=>{
-        console.log(user)
+        // console.log(user)
         const items= JSON.parse(localStorage.getItem('myUsers'));
         const newUser=JSON.stringify([...items,user])
         localStorage.setItem('myUsers',newUser)
-        console.log(newUser)
+        // console.log(newUser)
         addUsers((prevValues)=>{
             return [...prevValues,user]
         })
@@ -35,7 +44,7 @@ function CreateUser() {
 
   return (
     <div className={style.listwrapper}>
-        <ul className={style.list}>
+        <ul className={style.list} id='user-feed'>
          {
             users.map(user=>(
                 <li className={style.listitem} key={user.id}>{user.name}  </li>
