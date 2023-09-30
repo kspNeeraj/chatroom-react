@@ -16,7 +16,7 @@ function UserForm(props) {
     }
   return (
     <div>
-          <input className={style.input} type='text' value={user.name} onChange={e => setUser({name:e.target.value,id:props.length+1})}/>
+          <input className={style.input} placeholder='enter a unique user id' type='text' value={user.name} onChange={e => setUser({name:e.target.value,id:props.length+1})}/>
         <button className={style.button} onClick={handleUser} >create User</button>
     </div>
   )

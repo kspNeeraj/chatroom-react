@@ -125,7 +125,7 @@ function Poll(props) {
             <div class={style.data}>
             <input type="radio" onClick={handlePoll} name="poll" value="A" disabled={isPolled}/>
                 <label for="">A</label>
-                <p> {Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100)} </p>
+                <p> {Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100)} % </p>
             </div>
             <input  class={style.in} type='range' value={Math.floor((pollStatsA/(usersPolled>1?usersPolled:1))*100) } name='A' min={0} max={100}  />
         </div>
@@ -133,7 +133,7 @@ function Poll(props) {
             <div class={style.data}>
                 <input type="radio" onClick={handlePoll}  name="poll" value="B" disabled={isPolled}  />
                 <label for="">B</label>
-                <p> {Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} B</p>
+                <p> {Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} %</p>
             </div>
             <input class={style.in} type='range' value={Math.floor((pollStatsB/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
         </div>
@@ -141,7 +141,7 @@ function Poll(props) {
             <div class={style.data}>
             <input type="radio" onClick={handlePoll}  name="poll" value="C" disabled={isPolled}  />
                 <label for="">C</label>
-                <p> {Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} C</p>
+                <p> {Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} %</p>
             </div>
             <input class={style.in} type='range' value={Math.floor((pollStatsC/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100}/>
         </div>
@@ -149,7 +149,7 @@ function Poll(props) {
             <div class={style.data}>
             <input type="radio" onClick={handlePoll}  name="poll" value="D" disabled={isPolled}  />
                 <label for="">D</label>
-                <p> {Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} D</p>
+                <p> {Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} %</p>
             </div>
             <input class={style.in} type='range' value={Math.floor((pollStatsD/(usersPolled>1?usersPolled:1))*100)} name='A' min={0} max={100} />
         </div>
